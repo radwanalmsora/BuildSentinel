@@ -11,7 +11,6 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <VSSDKTargetPlatformRegRootSuffix>Exp</VSSDKTargetPlatformRegRootSuffix>
     <CreateVsixContainer>true</CreateVsixContainer>
-    <RuntimeIdentifiers>win</RuntimeIdentifiers>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.0.31903.59" />
