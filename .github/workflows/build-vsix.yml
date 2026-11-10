@@ -12,18 +12,24 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
-      - name: Build and Package VSIX
-        run: msbuild src/BuildSentinel/BuildSentinel.csproj /restore /p:Configuration=Release /p:DeployExtension=false /p:CreateVsixContainer=true
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v2
 
-      - name: Upload VSIX artifact
+      - name: Restore NuGet Packages
+        run: nuget restore src/BuildSentinel/BuildSentinel.csproj
+
+      - name: Build and Package VSIX
+        run: msbuild src/BuildSentinel/BuildSentinel.csproj /p:Configuration=Release /p:DeployExtension=false /p:CreateVsixContainer=true
+
+      - name: Upload VSIX Artifact
         uses: actions/upload-artifact@v4
         with:
           name: BuildSentinel-VSIX
-          path: src/BuildSentinel/bin/Release/*.vsix
+          path: '**/*.vsix'
           if-no-files-found: error
