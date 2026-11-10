@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
   <Extern href="stdidcmd.h" />
   <Extern href="vsshlids.h" />
+
   <Commands package="guidBuildSentinelPackage">
     <Groups>
       <Group guid="guidBuildSentinelCmdSet" id="BuildSentinelMenuGroup" priority="0x0600">
-        <Parent guid="guidSHLMainMenu" id="IDG_VS_TOOLS_EXTENSIONS" />
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
       </Group>
     </Groups>
+
     <Buttons>
       <Button guid="guidBuildSentinelCmdSet" id="cmdidAnalyzeBuildLog" priority="0x0100" type="Button">
         <Parent guid="guidBuildSentinelCmdSet" id="BuildSentinelMenuGroup" />
@@ -17,8 +20,10 @@
       </Button>
     </Buttons>
   </Commands>
+
   <Symbols>
     <GuidSymbol name="guidBuildSentinelPackage" value="{B9F5B1D7-5F18-4F36-9D47-1E0A2A90B671}" />
+    
     <GuidSymbol name="guidBuildSentinelCmdSet" value="{4D1C0D3A-3D1C-4F52-9C7A-9B0F8A2C6D11}">
       <IDSymbol name="BuildSentinelMenuGroup" value="0x1020" />
       <IDSymbol name="cmdidAnalyzeBuildLog" value="0x0100" />
