@@ -15,14 +15,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.x'
+
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v2
+      - name: Restore dependencies
+        run: dotnet restore src/BuildSentinel/BuildSentinel.csproj
 
-      - name: Restore and build VSIX
-        run: msbuild src/BuildSentinel/BuildSentinel.csproj /restore /p:Configuration=Release /p:DeployExtension=false /p:CreateVsixContainer=true
+      - name: Build and create VSIX
+        run: dotnet build src/BuildSentinel/BuildSentinel.csproj --configuration Release /p:CreateVsixContainer=true
 
       - name: Upload VSIX artifact
         uses: actions/upload-artifact@v4
