@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="BuildSentinel.4d1c0d3a-3d1c-4f52-9c7a-9b0f8a2c6d11" Version="1.0.0" Language="en-US" Publisher="Radwan Almsora" />
+    <DisplayName>BuildSentinel</DisplayName>
+    <Description xml:space="preserve">Analyze saved MSBuild and C# build logs locally, group diagnostics, identify likely root-cause patterns, and export reports.</Description>
+    <Tags>build, MSBuild, diagnostics, CSharp, .NET, analyzer, productivity</Tags>
+    <License>LICENSE</License>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,18.0)" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.0,18.0)" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.0,18.0)" />
+    <InstallationTarget Id="Microsoft.VisualStudio.IntegratedShell" Version="[17.0,18.0)" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName=".NET Framework" Version="[4.7.2,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="BuildSentinel" Path="|BuildSentinel;PkgdefProjectOutputGroup|" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011" />
+  </Assets>
+</PackageManifest>
