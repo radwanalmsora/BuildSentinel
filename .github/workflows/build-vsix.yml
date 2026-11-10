@@ -22,7 +22,7 @@ jobs:
         uses: NuGet/setup-nuget@v2
 
       - name: Restore and build VSIX
-        run: msbuild src/BuildSentinel/BuildSentinel.csproj /restore /p:Configuration=Release /p:DeployExtension=false
+        run: msbuild src/BuildSentinel/BuildSentinel.csproj /restore /p:Configuration=Release /p:DeployExtension=false /p:CreateVsixContainer=true
 
       - name: Upload VSIX artifact
         uses: actions/upload-artifact@v4
