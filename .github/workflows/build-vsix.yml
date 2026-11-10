@@ -3,7 +3,7 @@ name: Build Visual Studio Extension
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
     paths:
       - 'src/BuildSentinel/**'
       - '.github/workflows/build-vsix.yml'
@@ -24,7 +24,7 @@ jobs:
       - name: Restore NuGet Packages
         run: nuget restore src/BuildSentinel/BuildSentinel.csproj
 
-      - name: Build and Package VSIX
+      - name: Build VSIX with MSBuild
         run: msbuild src/BuildSentinel/BuildSentinel.csproj /p:Configuration=Release /p:DeployExtension=false /p:CreateVsixContainer=true
 
       - name: Upload VSIX artifact
