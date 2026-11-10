@@ -5,7 +5,6 @@
     <DisplayName>BuildSentinel</DisplayName>
     <Description xml:space="preserve">Analyze saved MSBuild and C# build logs locally, group diagnostics, identify likely root-cause patterns, and export reports.</Description>
     <Tags>build, MSBuild, diagnostics, CSharp, .NET, analyzer, productivity</Tags>
-    <License>LICENSE</License>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,18.0)" />
@@ -17,6 +16,6 @@
     <Dependency Id="Microsoft.Framework.NDP" DisplayName=".NET Framework" Version="[4.7.2,)" />
   </Dependencies>
   <Assets>
-    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="BuildSentinel" Path="|BuildSentinel;PkgdefProjectOutputGroup|" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" Path="BuildSentinel.dll" xmlns:d="http://schemas.microsoft.com/developer/vsix-manifest-extension/2010" />
   </Assets>
 </PackageManifest>
