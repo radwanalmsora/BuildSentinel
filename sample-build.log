@@ -1,0 +1,6 @@
+Build started...
+C:\src\Demo\Program.cs(12,18): error CS0246: The type or namespace name 'WidgetService' could not be found (are you missing a using directive or an assembly reference?)
+C:\src\Demo\Program.cs(18,9): error CS0103: The name 'widget' does not exist in the current context
+C:\src\Demo\Program.cs(25,21): warning CS0168: The variable 'ex' is declared but never used
+error NU1101: Unable to find package Example.Missing.Package. No packages exist with this id in source(s): nuget.org
+Build FAILED.
