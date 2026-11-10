@@ -31,5 +31,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: BuildSentinel-VSIX
-          path: '**/*.vsix'
+          path: src/BuildSentinel/bin/Release/**/*.vsix
           if-no-files-found: error
